@@ -1,16 +1,15 @@
 fun p1(){
-    val out = readInput(true).lines().map {
-        it.filter { it.isDigit() }.map { it.toString().toInt() }
-    }.sumOf { it.first()*10 + it.last()}
-    println(out)
+    println(readInput(true).lines().map {
+        it.filter { it.isDigit() }.map { it.digitToInt() }
+    }.sumOf { it.first()*10 + it.last() })
 }
 
 fun p2(){
     val digits = listOf("","one","two","three","four","five","six","seven","eight","nine")
     val out = readInput(true).lines().map { s->
-        (0 until s.length).flatMap { ind ->
+        s.indices.flatMap { ind ->
             val res = Regex("""^(\d|one|two|three|four|five|six|seven|eight|nine)""").find(s.substring(ind))
-            if(res != null) listOf(res.value) else listOf<String>()
+            if(res != null) listOf(res.value) else listOf()
         }
     }.map {
         it.map {
