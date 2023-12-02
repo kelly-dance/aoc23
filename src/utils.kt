@@ -58,6 +58,9 @@ fun<T> List<T>.split(on: T) = splitWhen { it == on }
 
 fun<T> Iterable<T>.cycle() = generateSequence { this }.flatten()
 
+fun Iterable<Int>.prod() = this.fold(1) { l, r -> l * r }
+fun Iterable<Long>.prod() = this.fold(1L) { l, r -> l * r }
+
 fun<T> Collection<T>.eachCount() = this.groupingBy { it }.eachCount()
 
 fun<T, R> Iterable<T>.cartesianProduct(other: Iterable<R>): MutableList<Pair<T, R>> {
