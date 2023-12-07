@@ -1,6 +1,6 @@
 
 fun d6p1(){
-    var (t,d) = readInput(true).lines().map { Regex("""(\d+)""").findAll(it).toList().map {it.value.toLong() }}
+    var (t,d) = readInput(true).lines().map { it.longs() }
     var w = 1
     for(i in t.indices){
         var ct = 0

@@ -12,6 +12,10 @@ fun MatchResult.ints(): List<Int> {
     return this.groupValues.drop(1).map(String::toInt)
 }
 
+fun String.longs(): List<Long> {
+    return Regex("""(\d+)""").findAll(this).toList().map { it.value.toLong() }
+}
+
 fun<K, V> MutableMap<K, V>.applyOn(key: K, fn: (value: V) -> V) = apply {
     this[key] = fn(this.getValue(key))
 }
