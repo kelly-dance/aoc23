@@ -8,10 +8,6 @@ fun readInput(real: Boolean): String {
     return file.readText().replace("\r\n", "\n").trim()
 }
 
-fun MatchResult.ints(): List<Int> {
-    return this.groupValues.drop(1).map(String::toInt)
-}
-
 fun String.longs(): List<Long> {
     return Regex("""(\d+)""").findAll(this).toList().map { it.value.toLong() }
 }
