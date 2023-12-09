@@ -9,7 +9,7 @@ fun readInput(real: Boolean): String {
 }
 
 fun String.longs(): List<Long> {
-    return Regex("""(\d+)""").findAll(this).toList().map { it.value.toLong() }
+    return Regex("""(-?\d+)""").findAll(this).toList().map { it.value.toLong() }
 }
 
 fun<K, V> MutableMap<K, V>.applyOn(key: K, fn: (value: V) -> V) = apply {
