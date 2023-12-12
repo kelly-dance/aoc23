@@ -1,3 +1,5 @@
+import java.util.SortedSet
+import java.util.TreeSet
 import kotlin.math.max
 import kotlin.math.min
 
@@ -33,8 +35,8 @@ fun main(){
         if(d2==-1) d2=b1.size
         if(d3==-1) d3=b2.size
         if(d4==-1) d4=b2.size
-        t += (d2-d1 + d4-d3);
-        t2 += (d2-d1 + d4-d3) * 999999L;
+        t += (d2-d1 + d4-d3)
+        t2 += (d2-d1 + d4-d3) * 999999L
     }
     println(t)
     println(t2)
